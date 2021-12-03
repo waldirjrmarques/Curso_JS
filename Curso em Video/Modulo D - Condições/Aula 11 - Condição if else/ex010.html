@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DETRAN</title>
+</head>
+<body>
+    <h1>Sistema de Multas</h1>
+    <p>Velociade maxima da pista 100km/h</p>
+    <p>Velocidade do Carro <input type="number" name="txtvel" id="txtvel"> Km/h <input type="button" value="Verificar"  onclick="calcular()"></p>
+     <!--
+         input => coloca o tipo de pocato no html
+         onclick="calcular()" => colocar o tipo de compartamento que vai fazer no html al clicar 
+     -->
+    <div id="res">
+
+    </div>
+    
+    <script>
+        function calcular() {
+         var txtv = window.document.getElementById('txtvel')
+         var vel =  Number(txtv.value) 
+         var res = window.document.getElementById('res')  
+         res.innerHTML = `Sua velocidade atual é de ${vel}km/h`
+            if (vel <= 100){ 
+                res.innerHTML += (`<br>Você está no limite da velociade</br>`)
+            }
+            else {
+                res.innerHTML += (`<br>Voce está acima da velocidade permitida</br> `)
+                res.innerHTML += (`<br><strong>MULTADO R$:500,00</strong></br>`)
+            }
+        }
+        
+        onmouseenter="entrar()"
+        //function calcular()  => linka a funçâo ao clicar no input onclick="calcular()" do html
+        
+        //var txtv = window.document.getElementById('txtvel') => linka o input ao script
+        
+        //var vel =  Number(txtv.value) => pega a informação que está sendo digitada no imput tranforma os string em numero
+       
+        //var res = window.document.getElementById('res') => criar uma variavel e link com id do html
+        
+        //res.innerHTML = `Sua velocidade atual é de ${vel}km/h` => funçao para escrever no html 
+        
+        // res.innerHTML += (`<br>Você está no limite da velociade</br>`) => contatena as informaçoes caso a condição se if ou else 
+    </script>
+</body>
+</html>

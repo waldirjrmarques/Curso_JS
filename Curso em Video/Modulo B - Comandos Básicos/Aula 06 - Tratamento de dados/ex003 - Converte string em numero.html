@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8"><!--comenario em html-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Primeiro prgrama</title>
+    <style> 
+        body {
+            background-color: rgb(129, 94, 255); /* comentario em CSS */ 
+        }
+        h1,p {
+            color: rgb(243, 243, 243);
+            font-size: 20pt;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        
+    </style>
+</head>
+<body>
+    <h1>Olá, Mundo!</h1>
+    <p>Me livrei da maldição</p> 
+    <script>
+      //var n1 = window.prompt('Digite um numero?')  retorna o valor por padrao como String
+        var n1 = Number(window.prompt('Digite um numero?')) 
+        var n2 = Number(window.prompt('Digite outro numero?')) 
+        // n1 = String(window.prompt('Digite um numero?')) 
+        // n2 = String(window.prompt('Digite outro numero?')) 
+        
+        /*
+         Number() <- converte  para real ou inteiro
+         Number.parseInt <- 1.1Converte string para numero inteiro
+         Number.parseFloat <- Converte string para numero real
+         String() <- Converte numero em String
+        */  
+        var soma = n1 + n2 // concatenação
+        alert(`A Soma entre os numeros é ${soma}`) 
+        // (number + nunber) faz adição
+        // (string + string) faz concatenação
+
+    </script>
+</body> 
+</html>

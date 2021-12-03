@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        p{
+            font-size: 20px;
+            color: hsl(60, 56%, 91%);
+        }
+    </style>
+</head>
+<body>
+  <h1>Vericação de Nacionalidade</h1> 
+  <p>Informe qual a sua Nacionalidade <input type="text" name="pais" id="pais"> <input type="button" value="verificar" onclick="verificacao()"></p>
+  <div id="res"></div>
+
+  <script>
+      function verificacao() {
+          var Naci = window.document.querySelector('input#pais')
+          var res = window.document.querySelector('div#res')
+          var  p = (Naci.value)
+          res.innerHTML = `Sua  Nacionalidade é ${p.toUpperCase()} `
+          
+          if (p == 'brasileiro')
+            { 
+                res.innerHTML += (`<br>Você é <strong>BRASILEIRO</strong></br>`)
+            }
+            else 
+            {
+                res.innerHTML += (`<br>Você é  <strong>ESTRANGEIRO</strong></br>`)
+               
+            }   
+      }
+     
+      /*
+   
+
+ if (p == 'brasileiro')
+            { 
+                res.innerHTML += (`<br>Você é <strong>BRASILEIRO</strong>01</br>`)
+            }
+          else {
+                if (p == 'Brasileiro')
+                { 
+                    res.innerHTML += (`<br>Você é <strong>BRASILEIRO</strong></br>`)
+                }
+                else{
+                res.innerHTML += (`<br>Você é  <strong>ESTRANGEIRO</strong></br>`)
+                } 
+            }
+
+
+     */
+  </script>
+  
+</body>
+</html>
+

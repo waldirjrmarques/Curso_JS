@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8"><!--comenario em html-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Primeiro prgrama</title>
+    <style> 
+        body {
+            background-color: rgb(129, 94, 255); /* comentario em CSS */ 
+        }
+        h1,p {
+            color: rgb(243, 243, 243);
+            font-size: 20pt;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        
+    </style>
+</head>
+<body>
+    <h1>Olá, Mundo!</h1>
+    <p>Me livrei da maldição</p> 
+    <script>
+        var n1 = Number(window.prompt('Digite um numero?')) 
+        var n2 = Number(window.prompt('Digite outro numero?')) 
+        /*
+         Number.parseInt <--Converte string para numero inteiro
+         Number.parseFloat <- Converte string para numero real
+        */  
+        var soma = n1 + n2 // concatenação
+        window.alert(`A Soma entre os numeros é ${soma.toFixed(2)}`) // .toFixed(2) coloca casas decimais  
+        window.alert(`A Soma entre os numeros é ${soma.toFixed(2).replace('.',',')}`) //.replace('.',',')  troca ponto por virgula
+        document.write(`A Soma entre os numeros é ${soma.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}</br>`) //.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}) coloca no padrao do país
+        document.write(`A Soma entre os numeros é ${soma.toLocaleString('pt-br')}`) //.toLocaleString('pt-br') coloca numero no badrao brasileio
+
+        /*
+            document.write(``) <- Mostra o resultado  no html
+            window.alert(``) <- Mostra o resultado em uma janela de alerta. 
+            window.prompt(``) <- Pega informaçoes de uma janela de alerta.
+        */ 
+    </script>
+</body> 
+</html>

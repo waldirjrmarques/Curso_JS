@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor Monetário</title>
+    <style>
+        input{
+            height: 45px;
+            width: 100px;
+            background-color: rgb(196, 212, 243);  
+        }
+        p{
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight:bolder;
+        }
+    </style>
+</head>
+<body>
+    <h1>Conversor R$ -> USD</h1>
+    <input type="button" value="Converter" onclick="clicar()">
+    <p>Click no botão acima para iniciar.</p>
+    <div id="res">
+
+    </div>
+    <script>
+        let string1 = prompt(`Quanto tá a cotação do dolar?`)
+        let cotacao = parseFloat(string1.replace(',', '.'))
+        
+        function clicar() {
+            let string2 = prompt(`Quanto você tem na carteira?`)
+            let real = parseFloat(string2.replace(',', '.'))
+            // comando para reconehcer tanto (,)ou (.) no prompt
+            let res = document.getElementById(`res`)
+            let dolar = real / cotacao
+            res.innerHTML = (`
+            <h1> Cotação do dolar  R$:${cotacao}</h1>
+            <h1> R$:${real} Reais Convertido em Dolar USD:${dolar.toFixed(2)}</h1>
+            
+            `)
+            //.toLocaleString('pt-br') comando tranforma os numeros no padrao brasileiro
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body onload="carregar()">
+    <div>
+        <img id="teste" src="camera.png" alt="foto dia">
+        <br>
+        <input type="button" value="Clicar" onclick="verificar()">
+    </div>
+
+    <div>
+        <img id="teste1" src="camera.png" alt="foto dia">
+    </div>
+    
+    <div id="resp">
+        
+    </div>
+    <div id="msg">
+        Clique aqui para ver a hora 
+        <input type="button" value="Clicar" onclick="hora()">
+        
+    </div> 
+    <script>
+        // 3  maneiras de trocar as fotos do html com java script
+      
+        //////////////////1////////////////////
+        function verificar() {
+            var img1 = document.getElementById(`teste`)
+            img1.setAttribute(`src`,`bebehomem.png`) //atribuindo ao src
+        }
+        
+        //////////////////2////////////////////
+        var img2 = document.getElementById(`teste1`)
+        img2.src = `bebehomem.png` // mudando o src
+        
+        //////////////////3////////////////////
+        var res = document.getElementById('resp') // variavel para mostrar a troca da foto
+        var img3 = document.createElement(`img`) // `cria` uma teg no html
+        img3.setAttribute(`id`,`foto`) // `cria` uma id para a teg img
+        img3.setAttribute(`src`,`criancamulher.png`) // colocar uma foto na teg 
+        res.appendChild(img3) // mostra  a imagem  da teg criada 
+    </script>
+
+
+    <script>
+        // teste com hora 
+        function hora() {
+            var d = document.getElementById('msg')
+            var hora1 = new Date()
+            var hora2 = hora1.getHours()
+            d.innerText = (`${hora2}`)     
+       } 
+    </script>    
+
+</body>
+</html>

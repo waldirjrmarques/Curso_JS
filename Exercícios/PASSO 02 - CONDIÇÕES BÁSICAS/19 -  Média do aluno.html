@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <section> Média do aluno
+        <div>   
+            <p>
+                Nome do Aluno <input type="text" name="" id="txtn">
+                1° Nota <input type="number" name="" id="txtnota1">
+                2° Nota <input type="number" name="" id="txtnota2">
+                <input type="button" value="verificar" onclick="verificar()">    
+            </p>
+        </div>
+        <div id="res">
+            
+        </div>
+    </section>
+    <script>
+        /*
+             Crie um algoritmo que leia o nome e as duas notas de um aluno, calcule a sua média e mostre na tela. No final, analise a média e mostre se o aluno teve ou não um bom aproveitamento (se ficou acima da média 7.0)
+        */
+                
+        function verificar() {
+            let txtn = document.getElementById(`txtn`)
+            let nome = txtn.value
+            
+            let txtnota1 = document.getElementById(`txtnota1`)
+            let nota1 = Number(txtnota1.value)
+            
+            let txtnota2 = document.getElementById(`txtnota2`)
+            let nota2 = Number(txtnota2.value)
+
+            let res = document.getElementById(`res`)
+
+            let media = (nota1 + nota2) / 2
+            
+            if (txtn.value.length == 0 || txtnota1.value.length == 0 || txtnota2.value.length == 0) {
+                alert(`Preencha todos os formularios`) 
+            }else{
+                res.innerHTML = `A média do aluno ${nome} é ${media}<br></br>`
+                if (media > 7.0) {
+                    res.innerHTML += `PARABENS você ficou acima da média`
+                }else{
+                    res.innerHTML += `QUE PENA você ficou abaixo da média`
+                }
+            }    
+        }
+    </script>
+</body>
+</html>

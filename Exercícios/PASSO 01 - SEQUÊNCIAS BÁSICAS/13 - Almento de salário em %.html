@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <section>Novo Salário
+        <div>   
+            <p> 
+                Informe seu Salário <input type="number" name="" id="txtv">
+                <input type="button" value="verificar" onclick="verificar()">
+            </p>    
+        </div>
+        <div id="res">
+            
+        </div>
+    </section>
+    <script>
+        /*
+             Faça um algoritmo que leia o salário de um funcionário, calcule e mostre o seu novo salário, com 15% de aumento.
+        */
+        function verificar() {
+            
+            let txtv = document.getElementById(`txtv`)
+            let valor = Number(txtv.value)
+    
+            let desconto = valor + (valor * (15 / 100))
+    
+            let res = document.getElementById(`res`)
+    
+            res.innerHTML = `Seu salário é de  ${valor.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}. Com almento de 15% fica  ${desconto.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})} `
+    
+        } 
+        </script>
+    </body>
+    </html>
+     

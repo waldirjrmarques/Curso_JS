@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Antes e Depois</title>
+    <style>
+        input{
+            height:50px; 
+        }
+    </style>
+</head>
+<body>
+    <h1>Antes e Depois</h1>
+    <input type="button" value="Antecessor e Sucessor" onclick="clicar()">
+    
+    <script>
+        function clicar() {
+        let numero = Number(prompt(`Digite um número inteiro qualquer`))
+            alert(` O antecessor de ${numero} é ${numero - 1} \n O Sucessor de ${numero} é ${numero + 1}` )
+        }
+    </script>
+</body>
+</html>

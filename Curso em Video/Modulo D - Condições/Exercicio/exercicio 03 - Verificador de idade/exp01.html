@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="exp01.css">
+    <title>Verificador de Idade</title>
+</head>
+<body>
+  <header>Verificador de Idade</header>  
+  <section>
+    <div>
+       <p>Ano de nascimento
+         <input type="number" name="txtano" id="txt" min="0" >
+       </p>
+       <p>
+         sexo:
+          <input type="radio" name="radsex" id="mas"checked>
+          <label for="mas">Masculino</label>
+          
+          <input type="radio" name="radsex" id="fem">
+          <label for="mas">Feminino</label>
+       </p>
+       <p>
+         <input type="button" value="Verificar" onclick="verificar()"> <!--onclick="verificar()" linda a funcao no js-->
+       </p>
+      </div>
+    <div id="res"> 
+      <p>Preencha os dados  acima para ver o resultado!</p>
+      <p id="foto"></p>
+    </div>
+  </section>
+  <footer>   
+    <p>&copy; Curso em Video</p>
+  </footer>
+  <script src="exp01.js"></script> <!--linka HTML ao J.S -->
+</body>
+</html>

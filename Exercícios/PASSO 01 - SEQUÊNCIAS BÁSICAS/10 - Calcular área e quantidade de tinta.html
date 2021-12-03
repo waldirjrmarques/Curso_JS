@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <section>
+        <div><h1>Calcule a área em M² a ser pintada</h1>
+            <p>
+                Largura <input type="number" name="L" id="txtl"> x
+                Altura <input type="number" name="A" id="txta">
+                <input type="button" value="Verificar" onclick="Verificar()">
+            </p>
+        </div>
+        <div id="res">
+            
+        </div>
+    </section>
+    <script>
+        /*
+            Faça um algoritmo que leia a largura e altura de uma parede, calcule e
+            mostre a área a ser pintada e a quantidade de tinta necessária para o serviço,
+            sabendo que cada litro de tinta pinta uma área de 2metros quadrados.
+        */
+        function Verificar(params) {
+            
+        
+        let txtl = document.getElementById(`txtl`)
+        let largura = Number(txtl.value)
+        
+        let txta = document.getElementById(`txta`)
+        let altura = Number(txta.value)
+       
+        let metroq = altura  * largura
+        
+        let res = document.getElementById(`res`)
+        
+        res.innerHTML = `M² da parede a ser pintada ${metroq}M²<br></br> Quantidade de Tinta ${metroq / 2} lm`
+
+    } 
+
+    </script>
+</body>
+</html>

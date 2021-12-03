@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <section>Calcular Valor a pagar 
+        <div>   
+            <p>
+                Informe Km percorridos 
+                <input type="number" name="" id="txtkm">
+                Qt dias alugado 
+                <input type="number" name="" id="txtd">
+                <input type="button" value="verificar" onclick="verificar()">
+
+
+            </p>
+        </div>
+        <div id="res">
+            
+        </div>
+    </section>
+    <script>
+        /*
+            A locadora de carros precisa da sua ajuda para cobrar seus serviços. Escreva um programa que pergunte a quantidade de Km percorridos por um carro alugado e a quantidade de dias pelos quais ele foi alugado. Calcule o preço total a pagar,sabendo que o carro custa R$90 por dia e R$0,20 por Km rodado.
+        */
+        function verificar() {
+            
+        
+        let txtkm = document.getElementById(`txtkm`)
+        let km = Number(txtkm.value)
+        let txtd = document.getElementById(`txtd`)
+        let dias = Number(txtd.value)
+
+        let res = document.getElementById(`res`)
+
+        let valorkm = km * 0.20
+        let valordias = dias * 90
+        let total = valorkm + valordias
+
+        res.innerHTML = `O valor total a pagar pelo aluguei do carro é de ${total.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}`
+
+        }
+    </script>
+</body>
+</html>

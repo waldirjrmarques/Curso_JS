@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor de Medidas</title>
+    <style>
+        input{
+            height: 45px;
+            width: 100px;
+            background-color: rgb(196, 212, 243);  
+        }
+        p{
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight:bolder;
+        }
+    </style>
+</head>
+<body>
+    <h1>Conversor de Temperatura</h1>
+    <input type="button" value="Converter" onclick="clicar()">
+    <p>Click no botão acima para iniciar.</p>
+    <div id="res">
+
+    </div>
+    <script>
+        function clicar() {
+            let string = prompt(`Digite uma Temperatura em ºC`)
+            let grau = parseFloat(string.replace(',', '.'))
+            // comando para reconehcer tanto (,)ou (.) no prompt
+            let res = document.getElementById(`res`)
+            let k = grau + 273.15
+            let f = (grau * 9/5) + 32
+            res.innerHTML = (`
+            <h1>A Temperatura ${grau}ºC</h1>
+            <br>${(k).toLocaleString('pt-br')}ºk   Conversão de Celsius para Kelvin</br>
+            <br>${(f).toLocaleString('pt-br')}ºF   Conversão de Celsius para Fahrenheit</br>
+            
+            `)
+            //.toLocaleString('pt-br') comando tranforma os numeros no padrao brasileiro
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <section>
+        <div>
+            <p>Conversor de Real para Dolar 
+                <input type="number" name="real" id="txtr">
+                <input type="button" value="Converter" onclick="Converter()">
+            </p>
+        </div>
+        <div id="res">
+            
+        </div>
+    </section>
+    <script>
+        /*
+            Faça um algoritmo que leia quanto dinheiro uma pessoa tem na carteira (em R$)
+            e mostre quantos dólares ela pode comprar. Considere US$1,00 = R$3,45.
+        */
+        function Converter() {
+            let txtr = document.getElementById(`txtr`)
+            let numero = Number(txtr.value)
+            
+            let cotacao = 3.45
+            let dolar = numero / cotacao
+
+            let res = document.getElementById(`res`)
+
+            res.innerHTML = (`Você tem ${numero.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})} Convertido em Dolar ${dolar.toLocaleString('pt-br',{style: 'currency', currency: 'USD'})}`)
+
+        }
+    </script>
+</body>
+</html>

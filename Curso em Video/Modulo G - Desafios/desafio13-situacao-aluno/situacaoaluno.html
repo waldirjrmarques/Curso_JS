@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Situação do aluno</title>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            
+        }
+        input{
+            height: 50px;
+            width: 150px;
+            background-color: rgb(194, 221, 195);  
+        }
+    </style>
+</head>
+<body>
+    <h1>Situação do Aluno</h1>
+    <input type="button" value="Entrar com as notas" onclick="clicar()">
+    <p id="res">Click no botão acima para iniciar.</p>
+    <script>
+         
+        function clicar() {
+            let nome =  String(prompt(`Qual é o nome do aluno`))
+            let string1 = prompt(`Primeira nota de ${nome}`)
+            let nota1 = parseFloat(string1.replace(',', '.'))
+            let string2 = prompt(`Segunda nota de ${nome}`)
+            let nota2 = parseFloat(string2.replace(',', '.'))
+            let media = (nota1 + nota2) / 2
+            res.innerHTML = (`<h1>Analisando a situação de ${nome}</h1>
+            <p>Com as notas ${nota1.toLocaleString('pt-br')} e ${nota2.toLocaleString('pt-br')} a <strong>Média é ${media.toLocaleString('pt-br')}</strong></p>`) 
+
+            if (media < 3.0){
+                res.innerHTML += (`
+                <p>Com média abaixo de 3.0 , o aluno está <mark style="background-color:rgba(243, 114, 114, 0.616)"><span  style="color:rgba(243, 12, 12, 0.979)">REPROVADO</span></mark></p>
+                `)
+            }else if(media >= 3.0 && media < 6.0 ){
+                res.innerHTML += (`
+                <p>Com média entre 3.0 e 6.0 , o aluno está <mark style="background-color:rgba(245, 171, 73, 0.651)"><span  style="color:rgba(247, 140, 0, 0.973)">RECUPERAÇÃO</span></mark></p>
+                `)
+            }else if(media >= 6.0){
+                res.innerHTML += (`
+                <p>Com média acima 6.0 , o aluno está <mark style="background-color:rgba(92, 235, 99, 0.733)"><span  style="color:rgb(0, 224, 11)">APROVADO</span></mark></p>
+                `)
+            }
+        }
+
+    </script>
+</body>
+</html>

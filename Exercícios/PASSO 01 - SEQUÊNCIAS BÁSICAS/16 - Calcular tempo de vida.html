@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <section>Tempo de vida de um fumante 
+        <div>   
+            <p>
+                Qt de cigarro fumados:
+                <input type="number" name="" id="txtq">
+                Qts anos já fumou:
+                <input type="number" name="" id="txta">
+                <input type="button" value="verificar" onclick="verificar()">
+            </p>
+        </div>
+        <div id="res">
+            
+        </div>
+    </section>
+    <script>
+        /*
+            [DESAFIO] Escreva um programa para calcular a redução do tempo de vida de um fumante. Pergunte a quantidade de cigarros fumados por dias e quantos anos ele já fumou. Considere que um fumante perde 10 min de vida a cada cigarro. Calcule quantos dias de vida um fumante perderá e exiba o total em dias
+        */
+        function verificar() {
+            
+        let txtq = document.getElementById(`txtq`)
+        let qtfumada = Number(txtq.value)
+        let txta = document.getElementById(`txta`)
+        let anosfumado = Number(txta.value)
+
+        let res  = document.getElementById(`res`)
+
+        let dias_fumando = anosfumado * 365
+        let qtfumada_anos = qtfumada * dias_fumando
+        let minperdido = 10 * qtfumada_anos
+        let diasperdidos = minperdido *  0.00067
+
+        res.innerHTML = `
+        Qt fumada popr dia ${qtfumada}<br></br>
+        Anos fumando ${anosfumado}
+        <br></br>
+        <br></br>    
+        Total dias fumado${dias_fumando}<br></br>
+        Qt fumada por ano ${qtfumada_anos}<br></br>
+        Minutos perdidos ${minperdido}<br></br>
+        Dias perdidos de vida ${parseInt(diasperdidos)}`
+        }
+    </script>
+</body>
+</html>
