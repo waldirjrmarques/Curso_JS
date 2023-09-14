@@ -52,8 +52,8 @@ Tipos Primitivos das variáveis
 /* Variável tipo Number (Numeros Inteiros e Reais )
     Ex:
 */
-        let x1 = 5
-        let x2 = 4.5
+        let x1 = 5  //Numero Inteiro
+        let x2 = 4.5 //Numero real
 
 /* Variável tipo String (Caracteres)
     Ex:
