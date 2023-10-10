@@ -15,11 +15,11 @@
     <title>Document</title>
 </head>
 <body>
-    <h1></h1>
+    <h1>Calcular valor trabalhado por Mês</h1>
     <section> 
         <div>   
-            <p> 
-                <input class=" " type="number">
+            <p> Inforrme os dias trabalhado no mês:
+                <input class="dias" type="number">
                 <button class="clicar" onclick="verificar()">Clicar</button>
             </p>
         </div>
@@ -29,12 +29,19 @@
     </section>
     <script>
         /*
-       
+        Crie um programa que leia o número de dias trabalhados em um mês e mostre o salário de um funcionário, sabendo que ele trabalha 8 horas por dia e ganha R$25 por hora trabalhada.
         */
 
         function verificar() {
+            let dias = document.querySelector('input.dias')
+                dias = Number(dias.value)
+            
+            let valormes = dias * 25
 
             let res = document.querySelector('div#res')
+
+            res.innerHTML = (`Você trabalhou no mês ${dias} dias `)
+            res.innerHTML += (`Seu salário é ${valormes.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}`)
         }
     </script>
 </body>

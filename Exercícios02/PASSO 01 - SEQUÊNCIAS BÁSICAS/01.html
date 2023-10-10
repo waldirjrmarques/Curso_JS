@@ -4,24 +4,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-         h1{
-            text-align: center;
-        }
-        input,button{
-            margin: 0px 5px ;
-        }
-    </style>
     <title>Document</title>
 </head>
 <body>
-    <h1></h1>
     <section> 
         <div>   
-            <p> 
-                <input class=" " type="number">
-                <button class="clicar" onclick="verificar()">Clicar</button>
-            </p>
+            
         </div>
         <div id="res">
             
@@ -29,13 +17,12 @@
     </section>
     <script>
         /*
-       
+            Escreva um programa que mostre na tela a mensagem "Olá, Mundo!"
         */
 
-        function verificar() {
-
-            let res = document.querySelector('div#res')
-        }
+        let res = document.querySelector('div#res')
+        res.innerHTML  = 'Olá Mundo'
+       
     </script>
 </body>
 </html>

@@ -1,0 +1,76 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+         h1{
+            text-align: center;
+        }
+        input,button{
+            margin: 0px 5px ;
+        }
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <h1>Analisar nota de aluno</h1>
+    <section> 
+        <div>   
+            <p> Aluno:
+                <input class="nome" type="text">
+                Nota 1
+                <input class="n1" type="number">
+                Nota 2
+                <input class="n2" type="number">
+                <button class="clicar" onclick="verificar()">Clicar</button>
+            </p>
+        </div>
+        <div id="res">
+            
+        </div>
+    </section>
+    <script>
+        /*
+        Crie um algoritmo que leia o nome e as duas notas de um aluno, calcule a sua média e mostre na tela. No final, analise a média e mostre se o aluno teve ou não um bom aproveitamento (se ficou acima da média 7.0)
+
+        */
+
+        function verificar() {
+            let nome = document.querySelector('input.nome')
+                if (nome.value.length == 0){
+                alert(`Informe Nome do Aluno`)
+                }
+                nome = String(nome.value)
+
+            let n1 = document.querySelector('input.n1')
+                if (n1.value.length == 0){
+                alert(`Informe o valor da Nota 1`)
+                }
+                n1 = Number(n1.value)
+
+            let n2 = document.querySelector('input.n2')
+                if (n2.value.length == 0){
+                alert(`Informe o valor da Nota 2`)
+                }
+                n2 = Number(n2.value)
+
+            let media = (n1 + n2) / 2  
+
+            let res = document.querySelector('div#res')
+            
+            res.innerHTML = (` O aluno ${nome} tirou a média ${media}.`)
+            if (media < 7 ){
+                res.innerHTML += (` Aproveitamento Ruim`)
+            }
+            else{
+                res.innerHTML += (` Aproveitamento Bom`)
+            }
+            
+           
+        }
+    </script>
+</body>
+</html>

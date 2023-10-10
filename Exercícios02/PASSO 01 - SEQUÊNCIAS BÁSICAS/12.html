@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+         h1{
+            text-align: center;
+        }
+        input,button{
+            margin: 0px 5px ;
+        }
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <h1>Calcular preço do produto com 5% de desconto</h1>
+    <section> 
+        <div>   
+            <p>Valor do produto R$: 
+                <input class="numero" type="number">
+                <button class="clicar" onclick="verificar()">Clicar</button>
+            </p>
+        </div>
+        <div id="res">
+            
+        </div>
+    </section>
+    <script>
+        /*
+        12) Crie um programa que leia o preço de um produto, calcule e mostre o seu PREÇO PROMOCIONAL, com 5% de desconto.
+
+        */
+
+        function verificar() {
+            let valor =  document.querySelector('input.numero') 
+               valor = Number(valor.value)
+            let clicar = document.querySelector('button.clicar')
+            let valordesconto = valor - ((5/100) * valor)
+
+            let res =  document.querySelector('div#res')
+
+            res.innerHTML = (`O valor do produto é ${valor.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})} <br> Com desconto de 5% o valor fica ${valordesconto.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}`)
+        }
+    </script>
+</body>
+</html>

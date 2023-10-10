@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+         h1{
+            text-align: center;
+        }
+        input,button{
+            margin: 0px 5px ;
+        }
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <h1>Verificar idade de votação</h1>
+    <section> 
+        <div>   
+            <p> Qual é seu ano de nascimento?
+                <input class="anonasc" type="number">
+                <button class="clicar" onclick="verificar()">Clicar</button>
+            </p>
+        </div>
+        <div id="res">
+            
+        </div>
+        
+    </section>
+    <script>
+        /*
+        18) Faça um programa que leia o ano de nascimento de uma pessoa, calcule a idade
+        dela e depois mostre se ela pode ou não votar.
+        */
+        
+        function verificar() {
+            let anonasc = document.querySelector('input.anonasc')
+
+            let data = new Date()
+            let anoatual = data.getFullYear()
+
+            if (anonasc.value.length == 0)   {
+                alert(`Informe seu ano de nascimento`)
+             }
+            if (anonasc.value.length > 4 || anonasc.value.length - 4) {
+                alert(`Informe um ano de nascimento válido`)
+            }
+            else{
+                anonasc = Number(anonasc.value)
+                let res = document.querySelector('div#res')
+                if (anonasc < (anoatual - 100) ){
+                    alert(`Infome o ano maior que ${anoatual - 100}`)
+                }
+                else{
+                    let idade = anoatual - anonasc 
+                    if (anonasc > anoatual || anonasc == 0){
+                        alert (`informe o ano de nascimento menor que ${anoatual}`)
+                    }
+                    else{
+                        res.innerHTML =  (`Voce tem ${idade} anos<br></br>`)
+                    if (idade < 16){
+                        res.innerHTML += (`Menor de idade -  Nao pode votar`)
+                    }
+                    else if (idade >= 16 && idade < 18) {
+                        res.innerHTML += (`Menor de idade -  Votar e opcional`)
+                    }    
+                    else if (idade >= 18 && idade <= 70) {
+                        res.innerHTML += (`Maior de idade -  Votar e obrigatorio`)   
+                    }
+                    else if (idade >70) {
+                        res.innerHTML += (`Maior de idade -  Votar e opcional`)  
+                    }  
+                    }
+                    
+                }
+            }
+    
+        
+        }
+    </script>
+</body>
+</html>

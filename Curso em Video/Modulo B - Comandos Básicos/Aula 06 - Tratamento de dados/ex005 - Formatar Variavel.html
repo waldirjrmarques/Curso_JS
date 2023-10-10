@@ -29,8 +29,11 @@
         */  
         var soma = n1 + n2 
         window.alert(`A Soma entre os numeros é ${soma.toFixed(2)}`) // .toFixed(2) coloca casas decimais  
+
         window.alert(`A Soma entre os numeros é ${soma.toFixed(2).replace('.',',')}`) //.replace('.',',')  troca ponto por virgula
+
         document.write(`A Soma entre os numeros é ${soma.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}</br>`) //.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}) coloca no padrao do país
+        
         document.write(`A Soma entre os numeros é ${soma.toLocaleString('pt-br')}`) //.toLocaleString('pt-br') coloca numero no badrao brasileio
 
         /*
