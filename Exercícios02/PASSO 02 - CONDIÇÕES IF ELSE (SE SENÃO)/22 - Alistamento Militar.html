@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+         h1{
+            text-align: center;
+        }
+        input,button{
+            margin: 0px 5px ;
+        }
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <h1>Alistamento Militar</h1>
+    <section> 
+        <div>   
+            <p> Informe seu anos de nascimento:
+                <input class="anonascimento " type="number">
+                <button class="clicar" onclick="verificar()">Clicar</button>
+            </p>
+        </div>
+        <div id="res">
+            
+        </div>
+    </section>
+    <script>
+        /*
+           22) Escreva um programa que leia o ano de nascimento de um rapaz e mostre a sua situação em relação ao alistamento militar.
+                - Se estiver antes dos 18 anos, mostre em quantos anos faltam para o
+                alistamento.
+                - Se já tiver depois dos 18 anos, mostre quantos anos já se passaram do
+                alistamento.
+        */
+
+        function verificar() {
+            let data = new Date()
+            let anoatual = data.getFullYear()
+
+            let res = document.querySelector('div#res')
+
+            let anonacimento = document.querySelector('input.anonascimento')
+            
+            //válidação de dados
+            if (anonacimento.value.length == 0){
+                alert(`Ano não Informado.`)
+                res.innerHTML = (` `)
+                }
+            else if (anonacimento.value.length != 4 ){
+            alert(`Informe um ano com 4 digitos`)
+            res.innerHTML = (` `)
+            }
+            else {
+                anonacimento = Number(anonacimento.value)
+               
+                if (anonacimento < (anoatual - 100) ){
+                    alert(`Infome o ano maior que ${anoatual - 100}`)
+                }
+                else{
+                    let idade = anoatual - anonacimento
+                    if(anonacimento  > anoatual){
+                        alert (`informe o ano de nascimento menor ou igual a  ${anoatual}`)
+
+                    //logica da questão    
+                    }
+                    else{
+                        if (idade < 18){
+                            res.innerHTML = (`Você tem ${idade} anos. Falta ${18 - idade} ano para se alistar `)
+                        }
+                        else if(idade == 18){
+                            res.innerHTML = (`Você tem ${idade} anos. Deve se alistar Imidiatamente`)
+                        }
+                        else{
+                            res.innerHTML = (`Você tem ${idade} anos. Já passou ${ idade - 18}ano  do seu alistamento `)
+                        }
+                    }
+                }
+            }             
+        }
+
+    </script>
+</body>
+</html>

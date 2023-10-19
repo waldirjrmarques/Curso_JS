@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+         h1{
+            text-align: center;
+        }
+        input,button{
+            margin: 0px 5px ;
+        }
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <h1>Contagem com destaque diviseveis por 4 [ ]</h1>
+    <section> 
+        <div>   
+            <p> Inicio:
+                <input class="inicio" type="number">
+                Fim
+                <input class="fim" type="number">
+                salto
+                <input class="salto" type="number">
+                <button class="clicar" onclick="verificar()">Clicar</button>
+            </p>
+        </div>
+        <div id="res">
+            
+        </div>
+    </section>
+    <script>
+        /*
+           43) Desenvolva um algoritmo que mostre uma contagem progressiva ou regressiva , marcando os números que forem divisíveis por 4, exatamente como mostrado abaixo:
+                30 29 [28] 27 26 25 [24] 23 22 21 [20] 19 18 17 [16]...
+        */
+
+        function verificar() {
+            let inicio = document.querySelector('.inicio')
+                inicio = Number(inicio.value)
+
+            let fim = document.querySelector('.fim')
+                fim = Number(fim.value)
+
+            let salto = document.querySelector('.salto')
+            salto = Number(salto.value)    
+
+            let res = document.querySelector('#res')
+            res.innerHTML = (``)
+
+            if (salto == 0){
+                salto = 1
+            }
+
+            if (inicio <= fim){
+                while (inicio <= fim) {
+
+                if (inicio % 4 == 0 ){
+                    res.innerHTML += (`[${inicio}]  `) 
+                }
+                else{
+                    res.innerHTML += (`${inicio}  `)
+                }
+                inicio += salto
+                }
+            
+            }
+            else{
+                while (inicio >= fim) {
+                
+                if (inicio % 4 == 0){
+                    res.innerHTML += (`[${inicio}]  `) 
+                } 
+
+                else{
+                    res.innerHTML += (`${inicio}  `)
+                }
+                
+                inicio -= salto
+                }
+            }
+        }
+    </script>
+</body>
+</html>

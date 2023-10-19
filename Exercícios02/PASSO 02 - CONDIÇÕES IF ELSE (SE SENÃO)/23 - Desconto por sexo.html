@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+         h1{
+            text-align: center;
+        }
+        input,button{
+            margin: 0px 5px ;
+        }
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <h1>Desconto por Sexo</h1>
+    <section> 
+        <div>   
+            <h3>- Homens ganham 5% de desconto <br>
+                - Mulheres ganham 13% de desconto</h3>
+            <p> Nome 
+                <input class="nome" type="text">
+                Sexo:
+                <select class="sexo">
+                    <option value="M">Masculino</option>
+                    <option value="F">Feminino</option>
+                </select> 
+                Valor R$:
+                <input class="valor" type="number">
+
+                <button class="clicar" onclick="verificar()">Clicar</button>
+            </p>
+        </div>
+        <div id="res">
+            
+        </div>
+    </section>
+    <script>
+        /*
+           23) Numa promoção exclusiva para o Dia da Mulher, uma loja quer dar descontos para todos, mas especialmente para mulheres. Faça um programa que leia nome, sexo e o valor das compras do cliente e calcule o preço com desconto. Sabendo que:
+            - Homens ganham 5% de desconto
+            - Mulheres ganham 13% de desconto
+        */
+
+        function verificar() {
+            let nome = document.querySelector('.nome')
+                nome = String(nome.value)
+                //tranforma primeira letra em maiscula
+                nome = nome.charAt(0).toUpperCase() + nome.slice(1)
+            let sexo = document.querySelector('.sexo')
+                sexo = String(sexo.value)
+            
+            let valor = document.querySelector('.valor') 
+                valor = Number(valor.value) 
+
+            let res = document.querySelector('#res')
+            if (nome.length == 0 ){
+                alert(`Informe seu nome`)
+            }
+            else if (valor <= 0 ){
+                alert(`Informe o valor do produto`)
+            }
+            else{
+                if (sexo == "M"){
+                let desconto = valor - (valor * 0.05)
+                res.innerHTML = (`${nome}, Seu sexo é Masculino.<br> Seu valor com desconto de 5% é ${desconto.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}`)
+            }
+                else if(sexo == "F"){
+                    let desconto = valor - (valor * 0.13)
+                    res.innerHTML = (`${nome}, Seu sexo é Feminino.<br> Seu valor com desconto de 13% é ${desconto.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}`)
+                }
+            }
+            
+        }
+    </script>
+</body>
+</html>

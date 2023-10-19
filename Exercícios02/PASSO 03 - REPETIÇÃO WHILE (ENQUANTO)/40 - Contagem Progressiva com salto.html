@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+         h1{
+            text-align: center;
+        }
+        input,button{
+            margin: 0px 5px ;
+        }
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <h1>Contagem Progressiva com salto</h1>
+    <section> 
+        <div>   
+            <p> Inicio:
+                <input class="inicio" type="number">
+                Fim
+                <input class="fim" type="number">
+                salto
+                <input class="salto" type="number">
+                <button class="clicar" onclick="verificar()">Clicar</button>
+            </p>
+        </div>
+        <div id="res">
+            
+        </div>
+    </section>
+    <script>
+        /*
+           38) Escreva um programa que mostre na tela a seguinte contagem:6 7 8 9 10 11 Acabou!
+        */
+
+        function verificar() {
+            let inicio = document.querySelector('.inicio')
+                inicio = Number(inicio.value)
+
+            let fim = document.querySelector('.fim')
+                fim = Number(fim.value)
+
+            let salto = document.querySelector('.salto')
+            salto = Number(salto.value)    
+
+            let res = document.querySelector('#res')
+            res.innerHTML = (``)
+
+            if (salto == 0){
+                salto = 1
+            }
+
+            while (inicio <= fim) {
+                
+                res.innerHTML += (`${inicio} - `) 
+            
+                inicio += salto
+            }
+           
+        }
+    </script>
+</body>
+</html>

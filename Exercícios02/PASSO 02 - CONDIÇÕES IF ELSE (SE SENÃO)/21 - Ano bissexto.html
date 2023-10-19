@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+         h1{
+            text-align: center;
+        }
+        input,button{
+            margin: 0px 5px ;
+        }
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <h1>Verificar se o ano é bissexto</h1>
+    <section> 
+        <div>   
+            <p> Informe o ano:
+                <input class="ano" type="number">
+                <button class="clicar" onclick="verificar()">Clicar</button>
+            </p>
+        </div>
+        <div id="res">
+            
+        </div>
+    </section>
+    <script>
+        /*
+            21) Faça um algoritmo que leia um determinado ano e mostre se ele é ou não
+            BISSEXTO.
+        */
+
+        function verificar() {
+            let res = document.querySelector('div#res')
+            let ano = document.querySelector('input.ano')
+            if (ano.value.length == 0){
+                alert(`Ano não Informado.`)
+                res.innerHTML = (` `)
+                }
+            else if (ano.value.length != 4 ){
+            alert(`Informe um ano com 4 digitos`)
+            res.innerHTML = (` `)
+            }
+            else {
+                ano = Number(ano.value)
+
+                if (Number.isInteger(ano)) //Verifca se o numero é inteiro
+                {
+                    if (ano % 4 == 0 && ano % 100 != 0 || ano % 400 == 0){
+                        res.innerHTML = (`O ano ${ano} é BISSEXTO`)
+
+                    }
+                    else{
+                    res.innerHTML = (`O ano ${ano} NÃO É  BISSEXTO`)
+                    }
+                }   
+            }
+        }
+    </script>
+</body>
+</html>

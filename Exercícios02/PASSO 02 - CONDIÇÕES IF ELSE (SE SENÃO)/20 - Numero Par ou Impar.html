@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+         h1{
+            text-align: center;
+        }
+        input,button{
+            margin: 0px 5px ;
+        }
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <h1>Verificando se o Numero é par ou impar</h1>
+    <section> 
+        <div>   
+            <p> Informe um número inteiro.
+                <input class="numero" type="number">
+                <button class="clicar" onclick="verificar()">Clicar</button>
+            </p>
+        </div>
+        <div id="res">
+            
+        </div>
+    </section>
+    <script>
+        /*
+            Desenvolva um programa que leia um número inteiro e mostre se ele é PAR ou
+            ÍMPAR.
+        */
+
+        function verificar() {
+
+            //validação de dados
+            let numero = document.querySelector('input.numero')
+            let res = document.querySelector('div#res')
+            if (numero.value.length == 0){
+                alert(`Valor não Informado.`)
+                res.innerHTML = (` `)
+                }
+            else{
+                //Lógica da questão
+                numero = Number(numero.value)
+            
+                if (Number.isInteger(numero)) //Verifca se o numero é inteiro
+                {
+                    numero = Number.parseInt(numero) 
+                    if (numero % 2 == 0){
+                        res.innerHTML = (`Numero Par`)
+                    }
+                    else{
+                        res.innerHTML = (`Numero impar`)
+                    }
+                }
+                else{
+                    alert(`Informe um valor inteiro`)
+
+                }
+            }
+        }
+    </script>
+</body>
+</html>

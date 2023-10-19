@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+         h1{
+            text-align: center;
+        }
+        input,button{
+            margin: 0px 5px ;
+        }
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <h1>Calcular valor da passagem por Quilometragem </h1>
+    <section> 
+        <div>   
+            <p> Infome a distância em Km:
+                <input class="distancia" type="number">
+                <button class="clicar" onclick="verificar()">Clicar</button>
+            </p>
+        </div>
+        <div id="res">
+            
+        </div>
+    </section>
+    <script>
+        /*
+           24) Faça um algoritmo que pergunte a distância que um passageiro deseja percorrer em Km. Calcule o preço da passagem, cobrando R$0.50 por Km para viagens até 200Km e R$0.45 para viagens mais longas.
+        */
+
+        function verificar() {
+            let distancia = document.querySelector('.distancia')
+                distancia = Number(distancia.value)  
+            let res = document.querySelector('div#res')
+
+            if (distancia <= 0 ){
+                alert(`Quilometragem não informada`)
+            }
+            else{
+                if (distancia <= 200){
+                    let valor = distancia * 0.50
+                    res.innerHTML = (`O valor da sua passagem é ${valor.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}`)
+                }
+                else{
+                    let valor = distancia * 0.45
+                    res.innerHTML = (`O valor da sua passagem é ${valor.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}`)
+                }
+            }
+        }
+    </script>
+</body>
+</html>

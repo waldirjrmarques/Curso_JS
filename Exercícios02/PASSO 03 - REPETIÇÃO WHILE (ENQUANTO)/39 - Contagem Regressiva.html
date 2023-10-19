@@ -15,11 +15,13 @@
     <title>Document</title>
 </head>
 <body>
-    <h1></h1>
+    <h1>Contagem Regressiva</h1>
     <section> 
         <div>   
-            <p> 
-                <input class=" " type="number">
+            <p> Inicio:
+                <input class="inicio" type="number">
+                Fim
+                <input class="fim" type="number">
                 <button class="clicar" onclick="verificar()">Clicar</button>
             </p>
         </div>
@@ -29,15 +31,30 @@
     </section>
     <script>
         /*
-            
-           
+           39) Faça um algoritmo que mostre na tela a seguinte contagem: 10 9 8 7 6 5 4 3 Acabou!
         */
 
         function verificar() {
+            let inicio = document.querySelector('.inicio')
+                inicio = Number(inicio.value)
+
+            let fim = document.querySelector('.fim')
+                fim = Number(fim.value)
 
             let res = document.querySelector('#res')
-            
             res.innerHTML = (``)
+
+            while (inicio >= fim) {
+                if (inicio != fim){
+                    res.innerHTML += (`${inicio} -> `)
+                }
+                else{
+                    res.innerHTML += (`${inicio}`) 
+                }
+
+                inicio--
+            }
+           
         }
     </script>
 </body>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+         h1{
+            text-align: center;
+        }
+        input,button{
+            margin: 0px 5px ;
+        }
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <h1>Contagem com destaque diviseveis por 4 [ ]</h1>
+    <section> 
+        <div>   
+            <p> Inicio:
+                <input class="inicio" type="number">
+                Fim
+                <input class="fim" type="number">
+                salto
+                <input class="salto" type="number">
+                <button class="clicar" onclick="verificar()">Clicar</button>
+            </p>
+        </div>
+        <div id="res">
+            
+        </div>
+    </section>
+    <script>
+        /*
+           46) Crie um programa que calcule e mostre na tela o resultado da soma: ex  6 + 8 + 10 + 12 + 14 + ... + 98 + 100.
+        */
+
+        function verificar() {
+            let inicio = document.querySelector('.inicio')
+                inicio = Number(inicio.value)
+
+            let fim = document.querySelector('.fim')
+                fim = Number(fim.value)
+
+            let salto = document.querySelector('.salto')
+            salto = Number(salto.value) 
+            
+            let soma = Number(0)
+
+            let res = document.querySelector('#res')
+            res.innerHTML = (``)
+
+            if (salto == 0){
+                salto = 1
+            }
+
+            if (inicio <= fim){
+                while (inicio <= fim) {
+
+                res.innerHTML += (`${inicio}  `)
+
+                soma = soma + inicio
+
+                inicio += salto
+
+                }
+                
+            }
+              
+            else{
+                while (inicio >= fim) {
+                
+                res.innerHTML += (`${inicio}  `)
+                
+                soma = soma + inicio
+
+                inicio -= salto
+
+                }
+                
+            }
+            res.innerHTML += (`<br>`)
+            res.innerHTML += (`${soma} `)
+    }
+    </script>
+</body>
+</html>
