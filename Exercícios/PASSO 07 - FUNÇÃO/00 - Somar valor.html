@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+         h1{
+            text-align: center;
+        }
+        input,button{
+            margin: 0px 5px ;
+        }
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <h1>Função somar valor com J.S</h1>
+    <section> 
+        <div>   
+            <p> Numero 1:
+                <input class="numero1" type="number">
+                Numero 2:
+                <input class="numero2" type="number">
+                <button class="clicar" onclick="verificar()">Clicar</button>
+            </p>
+        </div>
+        <div id="res">
+            
+        </div>
+    </section>
+    <script>
+       //Função para pegar valor do imput html
+       function verificar() {
+        let res = document.querySelector('#res')
+        let numero1 =  document.querySelector('.numero1')
+            numero1 = Number(numero1.value)
+
+        let numero2 =  document.querySelector('.numero2')
+            numero2 = Number(numero2.value)
+            res.innerHTML = (` `)
+            
+           //Função para testar valor 
+           function teste(n1=0,n2=0) {
+               return n1 + n2 
+                
+            
+            }
+            let resultado = teste(numero1, numero2)
+
+            res.innerHTML = (`${resultado}`)
+        }
+    
+    </script>
+</body>
+</html>

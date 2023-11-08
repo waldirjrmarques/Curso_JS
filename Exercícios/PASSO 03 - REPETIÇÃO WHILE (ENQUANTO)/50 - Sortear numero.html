@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+         h1{
+            text-align: center;
+        }
+        input,button{
+            margin: 0px 5px ;
+        }
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <h1>Sortear numero </h1>
+    <section> 
+        <div>   
+            <p> Infome o numero minimo
+                <input class="minimo" type="number">
+                Infome o numero maximo
+                <input class="maximo" type="number">
+                <button class="clicar" onclick="verificar()">Clicar</button>
+            </p>
+        </div>
+        <div id="res">
+            
+        </div>
+        <div id="resp">
+            
+        </div>
+    </section>
+    <script>
+        /*
+        Gera numero inteiro
+         res.innerHTML = (parseInt(Math.random() * 21))  
+
+        Gera numero fracionario
+         res.innerHTML = (parseFloat(Math.random() * 21).toFixed(2)``)  
+           
+        */
+
+        function verificar() {
+
+            let minimo = document.querySelector('.minimo')
+                minimo = Number(minimo.value)
+
+            let maximo = document.querySelector('.maximo')
+                maximo = Number(maximo.value)
+            let res = document.querySelector('#res')
+            let resp = document.querySelector('#resp')
+
+            let maior5 = 0
+            let divisivel = 0
+            res.innerHTML = (' ')
+
+            contador = 1
+            while (contador <= 20){
+                numero = (parseInt(Math.random() * (maximo - minimo + 1) + minimo))
+                res.innerHTML += (`${numero}`)
+                res.innerHTML += (` `)
+
+                // verifica se o numero gerado e maior que 5
+                if (numero > 5 ) {
+                   maior5 ++    
+                }
+                // verifca que o numero gerado e divisivel por 3
+                if (numero % 3 == 0 ) {
+                    divisivel ++    
+                }
+                resp.innerHTML = (`Números estão acima de 5: ${maior5} <br>Números são divisíveis por 3: ${divisivel}`)
+
+                contador ++
+            }
+            
+        }
+    </script>
+</body>
+</html>

@@ -4,15 +4,24 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        h1{
+            text-align: center;
+        }
+        input,button{
+            margin: 0px 5px ;
+        }
+    </style>
     <title>Document</title>
 </head>
 <body>
-    <section>
-        <div><h1>Calcule a área em M² a ser pintada</h1>
+    <h1>Calcular área a ser pintada</h1>
+    <section> 
+        <div>   
             <p>
-                Largura <input type="number" name="L" id="txtl"> x
-                Altura <input type="number" name="A" id="txta">
-                <input type="button" value="Verificar" onclick="Verificar()">
+                Altura <input class="altura" type="number">
+                Largura <input class="largura" type="number">
+                <button onclick="verificar()">Verificar</button>
             </p>
         </div>
         <div id="res">
@@ -21,27 +30,22 @@
     </section>
     <script>
         /*
-            Faça um algoritmo que leia a largura e altura de uma parede, calcule e
-            mostre a área a ser pintada e a quantidade de tinta necessária para o serviço,
-            sabendo que cada litro de tinta pinta uma área de 2metros quadrados.
+       Faça um algoritmo que leia a largura e altura de uma parede, calcule e mostre a área a ser pintada e a quantidade de tinta necessári para o serviço,sabendo que cada litro de tinta pinta uma área de 2metros quadrados.
         */
-        function Verificar(params) {
-            
-        
-        let txtl = document.getElementById(`txtl`)
-        let largura = Number(txtl.value)
-        
-        let txta = document.getElementById(`txta`)
-        let altura = Number(txta.value)
-       
-        let metroq = altura  * largura
-        
-        let res = document.getElementById(`res`)
-        
-        res.innerHTML = `M² da parede a ser pintada ${metroq}M²<br></br> Quantidade de Tinta ${metroq / 2} lm`
 
-    } 
+        function verificar() {
+            let altura = document.querySelector('input.altura')
+                altura = Number(altura.value)
 
+            let largura = document.querySelector('input.largura')
+                largura = Number(largura.value)
+
+            let res = document.querySelector('div#res')
+
+            let  metro_q = altura * largura
+            res.innerHTML = (`A área a ser pintada é ${metro_q} M² <br>`)
+            res.innerHTML += (`A quantidade de tinta nessesária  ${metro_q / 2} Litros`)
+        }
     </script>
 </body>
 </html>

@@ -4,15 +4,23 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+         h1{
+            text-align: center;
+        }
+        input,button{
+            margin: 0px 5px ;
+        }
+    </style>
     <title>Document</title>
 </head>
 <body>
-    <section> Calcular salário
+    <h1>Calcular valor trabalhado por Mês</h1>
+    <section> 
         <div>   
-            <p>
-                Imforme quantos dias você trabalhou
-                <input type="number" name="" id="txtd">
-                <input type="button" value="verificar" onclick="verificar()">
+            <p> Inforrme os dias trabalhado no mês:
+                <input class="dias" type="number">
+                <button class="clicar" onclick="verificar()">Clicar</button>
             </p>
         </div>
         <div id="res">
@@ -21,21 +29,20 @@
     </section>
     <script>
         /*
-            Crie um programa que leia o número de dias trabalhados em um mês e mostre o salário de um funcionário, sabendo que ele trabalha 8 horas por dia e ganha R$25 por hora trabalhada.
+        Crie um programa que leia o número de dias trabalhados em um mês e mostre o salário de um funcionário, sabendo que ele trabalha 8 horas por dia e ganha R$25 por hora trabalhada.
         */
+
         function verificar() {
+            let dias = document.querySelector('input.dias')
+                dias = Number(dias.value)
             
-        let txtd = document.getElementById(`txtd`)
-        let dias = Number(txtd.value)
-        let res = document.getElementById(`res`)
+            let valormes = dias * 25
 
-        let valordia = 8 * 25
-        let salario = dias * valordia
+            let res = document.querySelector('div#res')
 
-        res.innerHTML = `Você trabalhou ${dias} dia. Seu salário é ${salario.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}`
-
+            res.innerHTML = (`Você trabalhou no mês ${dias} dias `)
+            res.innerHTML += (`Seu salário é ${valormes.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}`)
         }
-
     </script>
 </body>
 </html>

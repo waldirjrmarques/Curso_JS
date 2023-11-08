@@ -15,7 +15,7 @@ let num = [5 , 8 , 4 , 2 , 3 , 1 , 11 , 13 ,20,23, 25, 100 , 102,500, 501]
 
 console.log(num)
 
-console.log(num[0]) // Mostra o valor di Indice 0
+console.log(num[0]) // Mostra o valor do Indice 0
 
 num[3] = 6 // troca o indice 3 com o valor 6 
 console.log(num)

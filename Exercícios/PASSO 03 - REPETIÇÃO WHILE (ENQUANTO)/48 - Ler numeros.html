@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+         h1{
+            text-align: center;
+        }
+        input,button{
+            margin: 0px 5px ;
+        }
+        div{
+            text-align: center;
+        }
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <h1>Ler numeros e somar </h1>
+    <section> 
+        <div>   
+          
+                <button class="clicar" onclick="iniciar()">Iniciar</button>
+                
+        </div>
+       
+        <div id="res">
+            
+        </div>
+        <br>
+       
+        
+    </section>
+    <script>
+        /*
+           48) Faça um programa que leia 7 números inteiros e no final mostre o somatório entre eles.
+        */
+        let res =  document.querySelector('#res')
+        function iniciar() {
+            contador = 1
+            let numero = 0
+            let soma = 0
+            while (contador <= 7) {
+                numero =  Number(prompt(`Informe o ${contador}° numero:`))
+                if (Number.isInteger(numero)) //Verifca se o numero é inteiro
+                {
+                soma += numero    
+                contador ++ 
+
+                }
+                else{
+                    alert(`Numero informado não é um numero inteiro`)
+                }
+             
+            }
+        res.innerHTML = (` A soma dos numeros é: ${soma}`)
+    }
+    </script>
+</body>
+</html>

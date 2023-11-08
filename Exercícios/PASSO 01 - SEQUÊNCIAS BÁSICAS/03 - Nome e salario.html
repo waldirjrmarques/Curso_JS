@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-r">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,21 +7,26 @@
     <title>Document</title>
 </head>
 <body>
-  <h1></h1>
- <script>
-     /*
-        Crie um programa que leia o nome e o salário de um funcionário, mostrando no
-        final uma mensagem.
-        Ex:
-        Nome do Funcionário: Maria do Carmo
-        Salário: 1850,45
-        O funcionário Maria do Carmo tem um salário de R$1850,45 em Junho.
-    */
-     
-     let nome = prompt(`Qual seu nome?`)
-     let salario = Number(prompt(`Qual seu salário?`))
-
-     alert(`O funcionário ${nome} tem um salário de ${salario.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})} em Junho.`)
- </script>   
+    <section> 
+        <div>   
+            
+        </div>
+        <div id="res">
+            
+        </div>
+    </section>
+    <script>
+        /*
+            Crie um programa que leia o nome e o salário de um funcionário, mostrando no
+            final uma mensagem.
+                Ex:
+                Nome do Funcionário: Maria do Carmo
+                Salário: 1850,45
+                O funcionário Maria do Carmo tem um salário de R$1850,45 em Junho.
+        */
+        let nome = prompt('Qual é seu nome?')
+        let salario = Number(prompt('Informe seu salário.'))
+        alert(`O funcionario ${nome} tem um salário de ${salario.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}`)
+    </script>
 </body>
 </html>

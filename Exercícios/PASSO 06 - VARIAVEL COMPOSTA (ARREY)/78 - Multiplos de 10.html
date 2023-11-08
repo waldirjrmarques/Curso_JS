@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+         h1{
+            text-align: center;
+        }
+        input,button{
+            margin: 0px 5px ;
+        }
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <h1>Inserir nome em Arrey</h1>
+    <section> 
+        <div>   
+            <p> 
+                <button class="clicar" onclick="verificar()">Clicar</button>
+            </p>
+        </div>
+        <div id="res">
+            
+        </div>
+    </section>
+    <script>
+        /*
+            
+        78) Escreva um programa que leia 15 números e guarde-os em um vetor. No final,
+mostre o vetor inteiro na tela e em seguida mostre em que posições foram
+digitados valores que são múltiplos de 10.
+        */
+
+        arrey = [ ]  
+        function verificar() {
+            
+            let res = document.querySelector('#res')
+            res.innerHTML = (` `)
+
+            let arrey = []
+            for(let contador = 0; contador <= 6  ; contador ++){
+              let nome = Number(prompt(`Informe o ${contador + 1}° nome`))
+                arrey.push(nome)
+            }
+          res.innerHTML = (`${arrey} <br>`)
+           
+          for(let contador = 0; contador <= 6  ; contador ++){
+
+             if (arrey[contador] % 10 == 0){
+                res.innerHTML += (`Na posição ${contador} o numero [${arrey[contador]}] é divisivel por 10 <br>`)
+             }
+             
+            }
+            
+        }
+    </script>
+</body>
+</html>

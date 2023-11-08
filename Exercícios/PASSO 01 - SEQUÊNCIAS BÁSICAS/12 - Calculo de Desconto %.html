@@ -4,16 +4,24 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+         h1{
+            text-align: center;
+        }
+        input,button{
+            margin: 0px 5px ;
+        }
+    </style>
     <title>Document</title>
 </head>
 <body>
-    <section>PROMOÇÂO -> Desconto de 5% 
+    <h1>Calcular preço do produto com 5% de desconto</h1>
+    <section> 
         <div>   
-            <p>
-                Produto <input type="text" name="" id="txtp">
-                Valor <input type="number" name="" id="txtv">
-                <input type="button" value="verificar" onclick="verificar()">
-            </p>    
+            <p>Valor do produto R$: 
+                <input class="numero" type="number">
+                <button class="clicar" onclick="verificar()">Clicar</button>
+            </p>
         </div>
         <div id="res">
             
@@ -21,22 +29,20 @@
     </section>
     <script>
         /*
-            Crie um programa que leia o preço de um produto, calcule e mostre o seu PREÇO PROMOCIONAL, com 5% de desconto.
+        12) Crie um programa que leia o preço de um produto, calcule e mostre o seu PREÇO PROMOCIONAL, com 5% de desconto.
+
         */
+
         function verificar() {
-            
-        let txtp = document.getElementById(`txtp`)
-        let produto = txtp.value
-        let txtv = document.getElementById(`txtv`)
-        let valor = Number(txtv.value)
+            let valor =  document.querySelector('input.numero') 
+               valor = Number(valor.value)
+            let clicar = document.querySelector('button.clicar')
+            let valordesconto = valor - ((5/100) * valor)
 
-        let desconto = valor - (valor * (5 / 100))
+            let res =  document.querySelector('div#res')
 
-        let res = document.getElementById(`res`)
-
-        res.innerHTML = `O ${produto} no valor de ${valor.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}. Com 5% de desconto fica por ${desconto.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})} `
-
-    } 
+            res.innerHTML = (`O valor do produto é ${valor.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})} <br> Com desconto de 5% o valor fica ${valordesconto.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}`)
+        }
     </script>
 </body>
 </html>

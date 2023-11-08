@@ -5,47 +5,52 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        input, button{
+            margin-left: 10px;
+        }
+    </style>
 </head>
 <body>
-    <section>
-        <div>
-            <P>Digite uma distância em metros:
-                <input type="number" name="metros" id="txtm"> 
-                <input type="button" value="clicar" onclick="clicar()"></P>
+    <section> 
+        <div>   
+            <p>Digite um distância em metros:
+                <input class="numero" type="number">
+                <button onclick="verificar()">Verificar</button>
+            </p>
         </div>
         <div id="res">
-
+            
         </div>
     </section>
- <script>
-     /*
-       Desenvolva um programa que leia uma distância em metros e mostre os valores
-        relativos em outras medidas.
-        Ex:
-        Digite uma distância em metros: 185.72
-        A distância de 85.7m corresponde a:
-        0.18572Km
-        1.8572Hm
-        18.572Dam
-        1857.2dm
-        18572.0cm
-        185720.0mm
-    */
-   function clicar() { 
-     let txtm = document.getElementById(`txtm`)
-     let metros = Number(txtm.value)
-     /*Para transformar o input (string) do html em nunber no J.S precisa fazer esse         procedimento acima.*/ 
-    
-     let res = document.getElementById(`res`)
+    <script>
+        /*
+           Desenvolva um programa que leia uma distância em metros e mostre os valores
+            relativos em outras medidas.
+                Ex:
+                Digite uma distância em metros: 185.72
+                A distância de 85.7m corresponde a:
+                
+                0.18572Km
+                1.8572Hm
+                18.572Dam
+                1857.2dm
+                18572.0cm
+                185720.0mm 
+        */
+        function verificar() {
+            let metros =  document.querySelector('input.numero')
+            metros = Number(metros.value)
+            let res =  document.querySelector('div#res')
 
-     res.innerHTML = (`A distância de ${metros} corresponde a:
-      <br>${metros/1000}km</br>
-      <br>${metros/100}hm</br>
-      <br>${metros/10}dam</br>
-      <br>${metros*10}dm</br>
-      <br>${metros*100}cm</br>
-      <br>${metros*1000}mm</br>`)   
-   }        
- </script>   
+            res.innerHTML = (`A distância de ${metros} Metros corresponde a:<br>
+            <br>${metros/1000}km</br>
+            <br>${metros/100}hm</br>
+            <br>${metros/10}dam</br>
+            <br>${metros*10}dm</br>
+            <br>${metros*100}cm</br>
+            <br>${metros*1000}mm</br>`)
+        }
+    </script>
 </body>
 </html>

@@ -4,14 +4,20 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        input{
+            margin-left: 10px;
+        }
+    </style>
     <title>Document</title>
 </head>
 <body>
-    <section>
-        <div>
-            <p>Conversor de Real para Dolar 
-                <input type="number" name="real" id="txtr">
-                <input type="button" value="Converter" onclick="Converter()">
+    <section> 
+        <div>  
+            <h1>Converso de Real para dolar</h1> 
+            <p>Informe o valor: 
+                <input class="real" type="number">
+                <button onclick="converter()">Converter</button>
             </p>
         </div>
         <div id="res">
@@ -20,21 +26,18 @@
     </section>
     <script>
         /*
-            Faça um algoritmo que leia quanto dinheiro uma pessoa tem na carteira (em R$)
-            e mostre quantos dólares ela pode comprar. Considere US$1,00 = R$3,45.
+            Faça um algoritmo que leia quanto dinheiro uma pessoa tem na carteira (em R$) e mostre quantos dólares ela pode comprar. Considere US$1,00 = R$3,45.
         */
-        function Converter() {
-            let txtr = document.getElementById(`txtr`)
-            let numero = Number(txtr.value)
-            
+        function converter() {
+            let real  = document.querySelector('input.real')
+        real = Number(real.value)
             let cotacao = 3.45
-            let dolar = numero / cotacao
+            let dolar = real /  cotacao
+            let res  = document.querySelector('div#res')
 
-            let res = document.getElementById(`res`)
-
-            res.innerHTML = (`Você tem ${numero.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})} Convertido em Dolar ${dolar.toLocaleString('pt-br',{style: 'currency', currency: 'USD'})}`)
-
+            res.innerHTML = (` ${real.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})} Convetido em Dolar é  ${dolar.toLocaleString('pt-br',{style: 'currency', currency: 'USD'})}`)
         }
+       
     </script>
 </body>
 </html>

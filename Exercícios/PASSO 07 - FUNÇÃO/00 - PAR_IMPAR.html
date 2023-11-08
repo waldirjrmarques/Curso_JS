@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+         h1{
+            text-align: center;
+        }
+        input,button{
+            margin: 0px 5px ;
+        }
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <h1>Função par impar com J.S</h1>
+    <section> 
+        <div>   
+            <p> Informe um numero:
+                <input class="numero" type="number">
+                <button class="clicar" onclick="verificar()">Clicar</button>
+            </p>
+        </div>
+        <div id="res">
+            
+        </div>
+    </section>
+    <script>
+       //Função para pegar valor do imput html
+       function verificar() {
+        let res = document.querySelector('#res')
+        let numero =  document.querySelector('.numero')
+            numero = Number(numero.value)
+            res.innerHTML = (` `)
+            
+           //Função para testar valor 
+           function teste(n) {
+            if (n % 2 == 0){
+                return 'Par'
+            }
+            else{
+                return 'Impar'
+            }
+            
+            }
+            let resultado = teste(numero)
+
+            res.innerHTML = (`${resultado}`)
+        }
+    
+    </script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+         h1{
+            text-align: center;
+        }
+        input,button{
+            margin: 0px 5px ;
+        }
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <h1>Inserir nome em Arrey</h1>
+    <section> 
+        <div>   
+            <p> 
+                <button class="clicar" onclick="verificar()">Clicar</button>
+            </p>
+        </div>
+        <div id="res">
+            
+        </div>
+    </section>
+    <script>
+        /*
+            
+        77) Faça um programa que leia 7 nomes de pessoas e guarde-os em um vetor. No
+final, mostre uma listagem com todos os nomes informados, na ordem inversa
+daquela em que eles foram informados
+        */
+
+        arrey = [ ]  
+        function verificar() {
+            
+            let res = document.querySelector('#res')
+            res.innerHTML = (` `)
+
+            let arrey = []
+            for(let contador = 0; contador <= 6  ; contador ++){
+              let nome = prompt(`Informe o ${contador + 1}° nome`)
+                arrey.push(nome)
+            }
+
+            res.innerHTML = (`${arrey.reverse()} `)
+           
+        }
+    </script>
+</body>
+</html>

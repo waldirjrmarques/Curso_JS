@@ -4,15 +4,24 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+         h1{
+            text-align: center;
+        }
+        input,button{
+            margin: 0px 5px ;
+        }
+    </style>
     <title>Document</title>
 </head>
 <body>
-    <section>Novo Salário
+    <h1>Salário com 15% de aumento</h1>
+    <section> 
         <div>   
-            <p> 
-                Informe seu Salário <input type="number" name="" id="txtv">
-                <input type="button" value="verificar" onclick="verificar()">
-            </p>    
+            <p> Informe seu salário R$:
+                <input class="numero" type="number">
+                <button class="clicar" onclick="verificar()">Clicar</button>
+            </p>
         </div>
         <div id="res">
             
@@ -20,21 +29,20 @@
     </section>
     <script>
         /*
-             Faça um algoritmo que leia o salário de um funcionário, calcule e mostre o seu novo salário, com 15% de aumento.
+        Faça um algoritmo que leia o salário de um funcionário, calcule e mostre o
+        seu novo salário, com 15% de aumento.
         */
+
         function verificar() {
-            
-            let txtv = document.getElementById(`txtv`)
-            let valor = Number(txtv.value)
-    
-            let desconto = valor + (valor * (15 / 100))
-    
-            let res = document.getElementById(`res`)
-    
-            res.innerHTML = `Seu salário é de  ${valor.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}. Com almento de 15% fica  ${desconto.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})} `
-    
-        } 
-        </script>
-    </body>
-    </html>
-     
+            let salario =  document.querySelector('input.numero') 
+               salario = Number(salario.value)
+            let clicar = document.querySelector('button.clicar')
+            let salarioaumento = salario + ((15/100) * salario)
+
+            let res =  document.querySelector('div#res')
+
+            res.innerHTML = (`O valor do seu salário é ${salario.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})} <br> Com aumento de 15% seu novo salário é ${salarioaumento.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}`)
+        }
+    </script>
+</body>
+</html>
